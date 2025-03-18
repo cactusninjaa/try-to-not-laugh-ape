@@ -50,6 +50,7 @@
       border: none;
       border-radius: 8px;
       transition: background-color 0.3s ease;
+      align-self: center;
     }
 
     button:hover {
@@ -82,6 +83,7 @@
       z-index: 1000; /* Assurez-vous que l'écran de fin est au-dessus de tout le contenu */
       text-align: center;
       padding: 20px;
+      flex-direction: column;
     }
 
     /* Contenu de l'écran de fin centré */
@@ -103,14 +105,14 @@
       border: none;
       border-radius: 8px;
       transition: background-color 0.3s ease;
+      position: relative;
+      bottom: auto;
+      margin-top: 20px;
     }
 
     #endScreen button:hover {
       background-color: #e64a19; /* Couleur du bouton au survol */
     }
-
-
-
   </style>
 </head>
 <body>
@@ -127,11 +129,11 @@
   
   <!-- Ecran de fin -->
   <div id="endScreen" style="display: none;">
-      <h2>Fin du jeu !</h2>
-      <p>Sourire détecté !</p>
-      <button id="restartButtonEnd" onclick="restartSlider()">Recommencer</button>
-  </div>
-  
+    <h2 id="endScreenTitle">Fin du jeu !</h2>
+    <p id="endScreenMessage">Sourire détecté !</p>
+    <img id="capturedImage" style="max-width: 100%; border-radius: 10px; display: none; margin: auto;" alt="Votre sourire">
+    <button id="restartButtonEnd" onclick="restartSlider()" >Recommencer</button>
+  </div>  
   
 </body>
 </html>
